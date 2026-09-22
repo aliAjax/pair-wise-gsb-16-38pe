@@ -271,3 +271,422 @@ input {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- 结算与补贴核销台 ---------- */
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0 12px;
+  color: #172033;
+  background: #ffffff;
+  font: inherit;
+}
+
+select {
+  min-height: 42px;
+}
+
+textarea {
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+.stack-card small {
+  color: #64748b;
+}
+
+.metric-card strong {
+  font-variant-numeric: tabular-nums;
+  font-size: 28px;
+}
+
+.rule-list {
+  margin: 0 0 20px;
+  padding-left: 18px;
+  color: #526070;
+  line-height: 1.9;
+  font-size: 13.5px;
+}
+
+.reset-demo {
+  width: 100%;
+  color: #9a3412;
+  border-color: color-mix(in srgb, var(--warn) 45%, var(--border));
+}
+
+.filter-chips button.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.register-panel .field-grid {
+  align-items: end;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.voucher-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 14px;
+}
+
+.voucher-row label {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.version-tag {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 9%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, var(--border));
+}
+
+.revise-banner {
+  border-left: 4px solid var(--warn);
+  background: color-mix(in srgb, var(--warn) 9%, #ffffff);
+  border-radius: 6px;
+  padding: 11px 14px;
+  margin-bottom: 14px;
+  color: #7c2d12;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-alert {
+  border-radius: 6px;
+  padding: 11px 14px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-alert.ok {
+  color: #14532d;
+  background: color-mix(in srgb, var(--accent) 12%, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+.form-alert.suspend {
+  color: #9f1239;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+}
+
+/* 冲突清单表格：客户 / 项目 / 原值 / 限制 */
+.issue-table {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.issue-row {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.5fr) minmax(140px, 1fr) minmax(180px, 1.2fr) minmax(
+      200px,
+      1.3fr
+    );
+  gap: 12px;
+  padding: 10px 14px;
+  align-items: center;
+  font-size: 13.5px;
+  line-height: 1.5;
+  border-top: 1px solid var(--border);
+}
+
+.issue-row:first-child {
+  border-top: 0;
+}
+
+.issue-head {
+  background: #f1f5f9;
+  font-weight: 700;
+  color: #334155;
+}
+
+.issue-row:not(.issue-head):nth-child(even) {
+  background: #fbfdff;
+}
+
+.issue-value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #172033;
+  font-variant-numeric: tabular-nums;
+}
+
+.issue-limit {
+  color: #9f1239;
+}
+
+.field-tag {
+  flex-shrink: 0;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 2px 7px;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.field-tag.serial-bound,
+.field-tag.voucher-missing,
+.field-tag.subsidy-over {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+/* 台账记录卡 */
+.ledger-list {
+  gap: 14px;
+}
+
+.record-card.ledger {
+  grid-template-columns: 1fr;
+  padding: 18px;
+}
+
+.record-main {
+  display: grid;
+  grid-template-columns: 84px minmax(200px, 1.15fr) minmax(280px, 1.4fr) auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.record-card.ledger .record-index {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  word-break: break-all;
+}
+
+.record-card.status-frozen .record-index {
+  background: #0f766e;
+}
+
+.record-card.status-entered .record-index {
+  background: var(--warn);
+}
+
+.record-card.status-suspended .record-index {
+  background: #e11d48;
+}
+
+.record-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.record-title h3 {
+  margin: 0;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 3px 10px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.record-project {
+  margin: 6px 0 4px;
+  color: #172033;
+  font-weight: 600;
+}
+
+.record-meta,
+.record-reason {
+  margin-bottom: 0;
+  color: #526070;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.record-reason {
+  color: #7c2d12;
+}
+
+.amount-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(110px, 1fr));
+  gap: 10px 14px;
+}
+
+.amount-grid span {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.amount-grid strong {
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+.amount-grid strong.subsidy {
+  color: var(--primary);
+}
+
+.amount-grid strong.voucher {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.record-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.record-actions button {
+  white-space: nowrap;
+}
+
+.record-issues {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+}
+
+.issues-caption,
+.conflict-hint {
+  color: #9f1239;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.revision-history {
+  margin-top: 12px;
+}
+
+.revision-history summary {
+  cursor: pointer;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.revision-history ol {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.revision-line {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.revision-line span {
+  color: #64748b;
+  font-size: 12.5px;
+}
+
+.revision-amounts {
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.revision-reason {
+  font-size: 12.5px;
+  color: #7c2d12;
+}
+
+.conflict-panel {
+  margin-bottom: 20px;
+  border-left: 5px solid #e11d48;
+}
+
+.conflict-groups {
+  display: grid;
+  gap: 16px;
+}
+
+.conflict-record {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 13.5px;
+  color: #334155;
+}
+
+.saved-at,
+.empty-hint {
+  color: #64748b;
+}
+
+.empty-hint {
+  padding: 24px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+@media (max-width: 1080px) {
+  .record-main {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .amount-grid,
+  .record-actions {
+    grid-column: 1 / -1;
+  }
+
+  .record-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .issue-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .voucher-row {
+    grid-template-columns: 1fr;
+  }
+}
